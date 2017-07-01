@@ -1,0 +1,686 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D901272C-9C28-474D-BE78-BE42CD108773}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ControlPrestamoHerramientas</RootNamespace>
+    <AssemblyName>ControlPrestamoHerramientas</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <ApplicationIcon>configure.ico</ApplicationIcon>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <BaseAddress>4194304</BaseAddress>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>6C1A788E27A503DD937B0B60F9110AC466565233</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>ControlPrestamoHerramientas_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\mysql-connector-net-6.9.8-noinstall\v2.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataSetUsuarios.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetUsuarios.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Acerca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Acerca.Designer.cs">
+      <DependentUpon>Acerca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clases\consultasSQL.cs" />
+    <Compile Include="Clases\Seguridad.cs" />
+    <Compile Include="Clases\SeguridadAES.cs" />
+    <Compile Include="ConexionBaseDatos\conexionbd.cs" />
+    <Compile Include="ConexionBaseDatos\ConexionMySql.cs" />
+    <Compile Include="DSHerramientasAsignacion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSHerramientasAsignacion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSHerramientasAsignadas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSHerramientasAsignadas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\acceso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\acceso.Designer.cs">
+      <DependentUpon>acceso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Administrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Administrador.Designer.cs">
+      <DependentUpon>Administrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\CambioClave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\CambioClave.Designer.cs">
+      <DependentUpon>CambioClave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\configuracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\configuracion.Designer.cs">
+      <DependentUpon>configuracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\empleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\empleados.Designer.cs">
+      <DependentUpon>empleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\herramientas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\herramientas.Designer.cs">
+      <DependentUpon>herramientas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\herramientas_asignacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\herramientas_asignacion.Designer.cs">
+      <DependentUpon>herramientas_asignacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\herramientas_asignadas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\herramientas_asignadas.Designer.cs">
+      <DependentUpon>herramientas_asignadas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\prestamos_herramientas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\prestamos_herramientas.Designer.cs">
+      <DependentUpon>prestamos_herramientas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Informes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Informes.Designer.cs">
+      <DependentUpon>Informes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\sel_herr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\sel_herr.Designer.cs">
+      <DependentUpon>sel_herr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\usuarios.Designer.cs">
+      <DependentUpon>usuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="prestamo_herramientasDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>prestamo_herramientasDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="prestamo_herramientasDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>prestamo_herramientasDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DatosPrestamos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatosPrestamos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteGeneralPrestamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteGeneralPrestamos.Designer.cs">
+      <DependentUpon>ReporteGeneralPrestamos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteHerramientasAsignacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteHerramientasAsignacion.Designer.cs">
+      <DependentUpon>ReporteHerramientasAsignacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteHerramientasAsignadas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteHerramientasAsignadas.Designer.cs">
+      <DependentUpon>ReporteHerramientasAsignadas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteHerramientasAsignadasxFicha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteHerramientasAsignadasxFicha.Designer.cs">
+      <DependentUpon>ReporteHerramientasAsignadasxFicha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportePrestamoHerramientaxFicha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportePrestamoHerramientaxFicha.Designer.cs">
+      <DependentUpon>ReportePrestamoHerramientaxFicha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportePrestamosHerr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportePrestamosHerr.Designer.cs">
+      <DependentUpon>ReportePrestamosHerr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportesHerramientas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportesHerramientas.Designer.cs">
+      <DependentUpon>ReportesHerramientas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportesTrabajadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportesTrabajadores.Designer.cs">
+      <DependentUpon>ReportesTrabajadores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteUsuarios.Designer.cs">
+      <DependentUpon>ReporteUsuarios.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Formularios\Acerca.resx">
+      <DependentUpon>Acerca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\acceso.resx">
+      <DependentUpon>acceso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Administrador.resx">
+      <DependentUpon>Administrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\CambioClave.resx">
+      <DependentUpon>CambioClave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\configuracion.resx">
+      <DependentUpon>configuracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\empleados.resx">
+      <DependentUpon>empleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\herramientas.resx">
+      <DependentUpon>herramientas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\herramientas_asignacion.resx">
+      <DependentUpon>herramientas_asignacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\herramientas_asignadas.resx">
+      <DependentUpon>herramientas_asignadas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\prestamos_herramientas.resx">
+      <DependentUpon>prestamos_herramientas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Informes.resx">
+      <DependentUpon>Informes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\sel_herr.resx">
+      <DependentUpon>sel_herr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\usuarios.resx">
+      <DependentUpon>usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Reportes\ReporteUsuariosSistema.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportePrestamoHerramientaxFicha.resx">
+      <DependentUpon>ReportePrestamoHerramientaxFicha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportePrestamosxFicha.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteHerramientasAsignadasFicha.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteGeneralHerramientasAsinacion.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteGeneralPrestamos.resx">
+      <DependentUpon>ReporteGeneralPrestamos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteHerramientasAsignacion.resx">
+      <DependentUpon>ReporteHerramientasAsignacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteHerramientasAsignadasxFicha.resx">
+      <DependentUpon>ReporteHerramientasAsignadasxFicha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportePrestamosGeneral.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteHerramientasAsignadas.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteHerramientasAsignadas.resx">
+      <DependentUpon>ReporteHerramientasAsignadas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportePrestamos.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteHerramientas.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportePrestamosHerr.resx">
+      <DependentUpon>ReportePrestamosHerr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteTrabajadores.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportesHerramientas.resx">
+      <DependentUpon>ReportesHerramientas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportesTrabajadores.resx">
+      <DependentUpon>ReportesTrabajadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteUsuarios.resx">
+      <DependentUpon>ReporteUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="ControlPrestamoHerramientas_TemporaryKey.pfx" />
+    <None Include="DataSetUsuarios.xsc">
+      <DependentUpon>DataSetUsuarios.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetUsuarios.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetUsuarios.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetUsuarios.xss">
+      <DependentUpon>DataSetUsuarios.xsd</DependentUpon>
+    </None>
+    <None Include="DSHerramientasAsignacion.xsc">
+      <DependentUpon>DSHerramientasAsignacion.xsd</DependentUpon>
+    </None>
+    <None Include="DSHerramientasAsignacion.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSHerramientasAsignacion.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSHerramientasAsignacion.xss">
+      <DependentUpon>DSHerramientasAsignacion.xsd</DependentUpon>
+    </None>
+    <None Include="DSHerramientasAsignadas.xsc">
+      <DependentUpon>DSHerramientasAsignadas.xsd</DependentUpon>
+    </None>
+    <None Include="DSHerramientasAsignadas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSHerramientasAsignadas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSHerramientasAsignadas.xss">
+      <DependentUpon>DSHerramientasAsignadas.xsd</DependentUpon>
+    </None>
+    <None Include="prestamo_herramientasDataSet.xsc">
+      <DependentUpon>prestamo_herramientasDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="prestamo_herramientasDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>prestamo_herramientasDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="prestamo_herramientasDataSet.xss">
+      <DependentUpon>prestamo_herramientasDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="prestamo_herramientasDataSet1.xsc">
+      <DependentUpon>prestamo_herramientasDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="prestamo_herramientasDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>prestamo_herramientasDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="prestamo_herramientasDataSet1.xss">
+      <DependentUpon>prestamo_herramientasDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="DatosPrestamos.xsc">
+      <DependentUpon>DatosPrestamos.xsd</DependentUpon>
+    </None>
+    <None Include="DatosPrestamos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosPrestamos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DatosPrestamos.xss">
+      <DependentUpon>DatosPrestamos.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\caja-de-herramientas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\trabajadores2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\reports_98403.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\status_report_icon4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\status_report_icon3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\status_report_icon2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\trabajadores3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\add2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\papelera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\icon_edit_large.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\Recyclebin-Empty_24x24-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\close_24x24-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\help_16x16-32 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\help_24x24-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\home_24x24-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\restart_16x16-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\search_16x16-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\search_24x24-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\symbol-check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\close_16x16-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\role.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\report_user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\group_gear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\door_out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\database_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\ico_herramientas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\herramientas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\herramientas2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\liberar-icono-7141-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\configurar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\worker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\supplier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\key-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\herramienta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\trabajador.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\herramientas3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\cajaherramientas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\rache.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\señorita.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\maqsoldar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\pistolaneum.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\esmeril.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\Voltage_Meter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\taladro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\EnerpacHydraulic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\grasera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\megger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\accept.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\candado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\change_password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\Help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\Help_24x24-32 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\ico_admin.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\trabajor_herr.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\icono-de-trabajador.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\acceso.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\caja_herr.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\pres_herr.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\users.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\herramientas.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\llaves.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RecursosGraficos\reports.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="configure.ico" />
+    <Content Include="herramientas.ico" />
+    <Content Include="prestamo_herramientas.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="RecursosGraficos\Plaza GMA.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<configSections>
+ </configSections>
+ <connectionStrings>
+  <add name="ControlPrestamoHerramientas.Properties.Settings.prestamo_herramientasConnectionString"
+   connectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\prestamo_herramientas.accdb;Persist Security Info=True"
+   providerName="System.Data.OleDb" />
+  <add name="ControlPrestamoHerramientas.Properties.Settings.prestamo_herramientasConnectionString1"
+   connectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\BDA\prestamo_herramientas.accdb;Persist Security Info=True;Jet OLEDB:Database Password=mebym73"
+   providerName="System.Data.OleDb" />
+ </connectionStrings>
+ <startup>
+		<supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0" />
+	</startup>
+</configuration>
